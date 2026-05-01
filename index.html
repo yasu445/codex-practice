@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI勉強会 告知</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --accent: #4f46e5;
+        --accent-soft: #eef2ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        background:
+          radial-gradient(circle at 10% 10%, #dbeafe 0%, transparent 35%),
+          radial-gradient(circle at 90% 90%, #e9d5ff 0%, transparent 30%),
+          var(--bg);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .event-card {
+        width: min(860px, 100%);
+        background: var(--card);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow:
+          0 25px 45px -20px rgba(15, 23, 42, 0.35),
+          0 8px 18px -12px rgba(79, 70, 229, 0.3);
+      }
+
+      .event-image {
+        width: 100%;
+        height: clamp(260px, 42vw, 430px);
+        object-fit: cover;
+        display: block;
+      }
+
+      .event-body {
+        padding: clamp(22px, 3.2vw, 34px);
+        display: grid;
+        gap: 18px;
+      }
+
+      .event-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .label {
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-radius: 999px;
+        display: inline-block;
+        padding: 10px 14px;
+        text-align: center;
+      }
+
+      .value {
+        font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        .event-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+
+        .label {
+          width: fit-content;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="event-card">
+      <img
+        class="event-image"
+        src="https://images.unsplash.com/photo-1677442135968-6a5f15a23e21?auto=format&fit=crop&w=1600&q=80"
+        alt="AI勉強会をイメージした近未来的なビジュアル"
+      />
+
+      <section class="event-body" aria-label="イベント詳細">
+        <div class="event-item">
+          <span class="label">タイトル</span>
+          <span class="value">みんなで学ぶ生成AI入門 〜業務活用の第一歩〜</span>
+        </div>
+        <div class="event-item">
+          <span class="label">開催日時</span>
+          <span class="value">2026年6月12日（金）18:30〜20:00</span>
+        </div>
+        <div class="event-item">
+          <span class="label">場所</span>
+          <span class="value">本社 5F コラボレーションホール ＋ オンライン配信（Zoom）</span>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
