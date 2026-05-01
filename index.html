@@ -6,99 +6,119 @@
     <title>AI勉強会 告知</title>
     <style>
       :root {
-        --bg: #f4f7fb;
+        --bg: #eef4ff;
         --card: #ffffff;
         --text: #1f2937;
-        --muted: #6b7280;
         --accent: #4f46e5;
         --accent-soft: #eef2ff;
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         min-height: 100vh;
         font-family: "Inter", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-        background:
-          radial-gradient(circle at 10% 10%, #dbeafe 0%, transparent 35%),
-          radial-gradient(circle at 90% 90%, #e9d5ff 0%, transparent 30%),
-          var(--bg);
-        color: var(--text);
+        background: radial-gradient(circle at 15% 10%, #dbeafe 0%, transparent 36%),
+          radial-gradient(circle at 88% 85%, #e9d5ff 0%, transparent 32%), var(--bg);
         display: grid;
         place-items: center;
+        color: var(--text);
         padding: 24px;
       }
-
       .event-card {
-        width: min(860px, 100%);
+        width: min(920px, 100%);
+        border-radius: 26px;
         background: var(--card);
-        border-radius: 24px;
         overflow: hidden;
-        box-shadow:
-          0 25px 45px -20px rgba(15, 23, 42, 0.35),
-          0 8px 18px -12px rgba(79, 70, 229, 0.3);
+        box-shadow: 0 30px 48px -24px rgba(15, 23, 42, 0.4),
+          0 10px 22px -14px rgba(79, 70, 229, 0.35);
       }
-
-      .event-image {
-        width: 100%;
-        height: clamp(260px, 42vw, 430px);
-        object-fit: cover;
-        display: block;
+      .hero {
+        position: relative;
+        min-height: clamp(260px, 42vw, 430px);
+        background:
+          linear-gradient(140deg, rgba(79, 70, 229, 0.88), rgba(29, 78, 216, 0.82)),
+          radial-gradient(circle at 18% 25%, rgba(255, 255, 255, 0.38), transparent 45%),
+          radial-gradient(circle at 85% 80%, rgba(196, 181, 253, 0.42), transparent 38%);
       }
-
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        filter: blur(0.5px);
+      }
+      .hero::before {
+        width: 240px;
+        height: 240px;
+        top: -40px;
+        right: -40px;
+      }
+      .hero::after {
+        width: 180px;
+        height: 180px;
+        left: 36px;
+        bottom: 18px;
+      }
+      .hero-title {
+        position: absolute;
+        left: clamp(20px, 3vw, 36px);
+        bottom: clamp(20px, 3vw, 34px);
+        color: #fff;
+      }
+      .hero-title .chip {
+        display: inline-block;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.22);
+        padding: 8px 12px;
+        border-radius: 999px;
+        backdrop-filter: blur(2px);
+      }
+      .hero-title h1 {
+        margin: 12px 0 0;
+        font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+        line-height: 1.25;
+      }
       .event-body {
-        padding: clamp(22px, 3.2vw, 34px);
+        padding: clamp(22px, 3vw, 34px);
         display: grid;
-        gap: 18px;
+        gap: 16px;
       }
-
       .event-item {
         display: grid;
         grid-template-columns: 120px 1fr;
-        align-items: center;
         gap: 12px;
+        align-items: center;
       }
-
       .label {
         font-weight: 700;
-        letter-spacing: 0.03em;
         color: var(--accent);
         background: var(--accent-soft);
         border-radius: 999px;
-        display: inline-block;
         padding: 10px 14px;
         text-align: center;
       }
-
       .value {
         font-size: clamp(1.02rem, 1.8vw, 1.18rem);
-        line-height: 1.5;
         font-weight: 600;
+        line-height: 1.5;
       }
-
-      @media (max-width: 600px) {
-        .event-item {
-          grid-template-columns: 1fr;
-          gap: 8px;
-        }
-
-        .label {
-          width: fit-content;
-        }
+      @media (max-width: 620px) {
+        .event-item { grid-template-columns: 1fr; gap: 8px; }
+        .label { width: fit-content; }
       }
     </style>
   </head>
   <body>
     <article class="event-card">
-      <img
-        class="event-image"
-        src="https://images.unsplash.com/photo-1677442135968-6a5f15a23e21?auto=format&fit=crop&w=1600&q=80"
-        alt="AI勉強会をイメージした近未来的なビジュアル"
-      />
-
+      <header class="hero" aria-label="AI勉強会のメインビジュアル">
+        <div class="hero-title">
+          <span class="chip">INTERNAL EVENT</span>
+          <h1>AI勉強会のお知らせ</h1>
+        </div>
+      </header>
       <section class="event-body" aria-label="イベント詳細">
         <div class="event-item">
           <span class="label">タイトル</span>
