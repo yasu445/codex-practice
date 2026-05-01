@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI勉強会 告知</title>
+    <style>
+      :root {
+        --bg: #eef4ff;
+        --card: #ffffff;
+        --text: #1f2937;
+        --accent: #4f46e5;
+        --accent-soft: #eef2ff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        background: radial-gradient(circle at 15% 10%, #dbeafe 0%, transparent 36%),
+          radial-gradient(circle at 88% 85%, #e9d5ff 0%, transparent 32%), var(--bg);
+        display: grid;
+        place-items: center;
+        color: var(--text);
+        padding: 24px;
+      }
+      .event-card {
+        width: min(920px, 100%);
+        border-radius: 26px;
+        background: var(--card);
+        overflow: hidden;
+        box-shadow: 0 30px 48px -24px rgba(15, 23, 42, 0.4),
+          0 10px 22px -14px rgba(79, 70, 229, 0.35);
+      }
+      .hero {
+        position: relative;
+        min-height: clamp(260px, 42vw, 430px);
+        background:
+          linear-gradient(140deg, rgba(79, 70, 229, 0.88), rgba(29, 78, 216, 0.82)),
+          radial-gradient(circle at 18% 25%, rgba(255, 255, 255, 0.38), transparent 45%),
+          radial-gradient(circle at 85% 80%, rgba(196, 181, 253, 0.42), transparent 38%);
+      }
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        filter: blur(0.5px);
+      }
+      .hero::before {
+        width: 240px;
+        height: 240px;
+        top: -40px;
+        right: -40px;
+      }
+      .hero::after {
+        width: 180px;
+        height: 180px;
+        left: 36px;
+        bottom: 18px;
+      }
+      .hero-title {
+        position: absolute;
+        left: clamp(20px, 3vw, 36px);
+        bottom: clamp(20px, 3vw, 34px);
+        color: #fff;
+      }
+      .hero-title .chip {
+        display: inline-block;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.22);
+        padding: 8px 12px;
+        border-radius: 999px;
+        backdrop-filter: blur(2px);
+      }
+      .hero-title h1 {
+        margin: 12px 0 0;
+        font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+        line-height: 1.25;
+      }
+      .event-body {
+        padding: clamp(22px, 3vw, 34px);
+        display: grid;
+        gap: 16px;
+      }
+      .event-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 12px;
+        align-items: center;
+      }
+      .label {
+        font-weight: 700;
+        color: var(--accent);
+        background: var(--accent-soft);
+        border-radius: 999px;
+        padding: 10px 14px;
+        text-align: center;
+      }
+      .value {
+        font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+        font-weight: 600;
+        line-height: 1.5;
+      }
+      @media (max-width: 620px) {
+        .event-item { grid-template-columns: 1fr; gap: 8px; }
+        .label { width: fit-content; }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="event-card">
+      <header class="hero" aria-label="AI勉強会のメインビジュアル">
+        <div class="hero-title">
+          <span class="chip">INTERNAL EVENT</span>
+          <h1>AI勉強会のお知らせ</h1>
+        </div>
+      </header>
+      <section class="event-body" aria-label="イベント詳細">
+        <div class="event-item">
+          <span class="label">タイトル</span>
+          <span class="value">みんなで学ぶ生成AI入門 〜業務活用の第一歩〜</span>
+        </div>
+        <div class="event-item">
+          <span class="label">開催日時</span>
+          <span class="value">2026年6月12日（金）18:30〜20:00</span>
+        </div>
+        <div class="event-item">
+          <span class="label">場所</span>
+          <span class="value">本社 5F コラボレーションホール ＋ オンライン配信（Zoom）</span>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
